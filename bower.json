@@ -1,0 +1,19 @@
+{
+  "name": "greenhouse",
+  "version": "0.0.0",
+  "authors": [
+    "Brian Shaler <brian@shaler.name>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "*",
+    "lodash": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

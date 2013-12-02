@@ -3,6 +3,17 @@
   <script src="bower_components/jquery/jquery.min.js"></script>
   <script src="bower_components/lodash/dist/lodash.min.js"></script>
   <script src="js/app.js"></script>
+  <script>
+  $(document).ready(function () {
+    window.tempGraph = tempGraph = new HorizonGraph("#temperature", "http://192.168.0.145:3000/sensor/4.json", ["temp"]);
+    window.humGraph = humGraph = new HorizonGraph("#humidity", "http://192.168.0.145:3000/sensor/4.json", ["hum"]);
+    humGraph.color = Graph.colors[1]
+    window.addEventListener("resize", function () {
+      tempGraph.render();
+      humGraph.render();
+    });
+  });
+  </script>
   <style>
   body {
     font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
@@ -23,6 +34,7 @@
   </style>
 </head>
 <body>
-  <div id="graph" class="graph" style="min-height: 300px;"></div>
+  <div id="temperature" class="graph" style="min-height: 100px;"></div>
+  <div id="humidity" class="graph" style="min-height: 100px;"></div>
 </body>
 </html>
